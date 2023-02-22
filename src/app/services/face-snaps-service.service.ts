@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import {FaceSnap} from "../models/face-snap.models";
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
 })
 export class FaceSnapsServiceService {
+
   faceSnaps: FaceSnap[] = [{
     id: 1,
     title: 'David',
