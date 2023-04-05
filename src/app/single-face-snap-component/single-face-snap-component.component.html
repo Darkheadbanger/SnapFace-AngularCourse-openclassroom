@@ -1,22 +1,37 @@
-<div class="face-snap-card" [ngClass]="{snapped: buttonText === 'Oops, unSnap!'}">
-  <p>{{4346234.36 | number: '1.0-0' }}</p> <!--DecimalPipe-->
-  <p>{{0.367 | percent: '1.0-0' }}</p>
-  <p>{{367.25 | currency: 'EUR' : 'code' }}</p><!--CurrencyPipe, par defaut $US-->
-  <h2>{{ faceSnap.title | uppercase }}</h2>
-  <img [src]="faceSnap.imageUrl" [alt]="faceSnap.title" />
+<div
+  class="face-snap-card"
+  [ngClass]="{ snapped: buttonText === 'Oops, unSnap!' }"
+>
+  <p>{{ 4346234.36 | number : "1.0-0" }}</p>
+  <!--DecimalPipe-->
+  <p>{{ 0.367 | percent : "1.0-0" }}</p>
+  <p>{{ 367.25 | currency : "EUR" : "code" }}</p>
+  <!--CurrencyPipe, par defaut $US-->
+  <h2>{{ faceSnap ? faceSnap.title : (null | uppercase) }}</h2>
+  <img
+    [src]="faceSnap ? faceSnap.imageUrl : null"
+    [alt]="faceSnap ? faceSnap.title : null"
+  />
   <p>
     Mise en ligne le
     {{
-    faceSnap.createdDate | date : "le dd/MMMM/yyyy, à HH:mm:ss"
+      faceSnap
+        ? faceSnap.createdDate
+        : (null | date : "le dd/MMMM/yyyy, à HH:mm:ss")
     }}
   </p>
-  <p>{{ faceSnap.description }}</p>
-  <p *ngIf="faceSnap.location"> La photo a été prise à: {{faceSnap.location}} </p>
+  <p>{{ faceSnap ? faceSnap.description : null }}</p>
+  <p *ngIf="faceSnap ? faceSnap.location : null">
+    La photo a été prise à: {{ faceSnap ? faceSnap.location : null }}
+  </p>
   <!-- <button (click)="onSnap()">{{ snapped ? ohSnap : ooopsSnap }}</button> -->
   <button (click)="onSnap()">{{ buttonText }}</button>
-  <span [ngStyle]="{ color: 'rgb(0, ' + faceSnap.snaps + ', 0'}">{{ faceSnap.snaps }}</span>
-  <br/>
+  <span
+    [ngStyle]="{
+      color: faceSnap ? 'rgb(0, ' + faceSnap.snaps + ', 0' : 'rgb(0, 0, 0)'
+    }"
+    >{{ faceSnap ? faceSnap.snaps : null }}</span
+  >
+  <br />
   <a routerLink="/faceSnaps">Back</a>
-
 </div>
-

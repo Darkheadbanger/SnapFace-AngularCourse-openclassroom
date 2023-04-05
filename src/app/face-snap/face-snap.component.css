@@ -1,1 +1,1 @@
-*{color:red;font-family:Roboto,Helvetica,sans-serif}.face-snap-card{margin:0 auto;display:block;width:35%}.face-snap-card img{width:100%}
+.face-snap-card{box-sizing:border-box;width:50%;margin:20px auto;padding:10px 30px;box-shadow:#d3d3d3 4px 4px 20px}.face-snap-card img{width:100%}.face-snap-card h2{margin-bottom:0}.face-snap-card p{font-weight:300;font-size:16px}.snapped{background-color:rgba(144,238,144,.4);color:#006400}.snapped button{box-shadow:#90ee90 3px 3px 7px;color:#006400}.snapped button:active{box-shadow:#90ee90 0 0 5px}

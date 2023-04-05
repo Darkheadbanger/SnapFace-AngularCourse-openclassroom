@@ -12,6 +12,7 @@ import { LandingPageComponentComponent } from './landing-page-component/landing-
 import { SingleFaceSnapComponentComponent } from './single-face-snap-component/single-face-snap-component.component';
 
 @NgModule({
+  // Pour enregistrer le router dans l'application c'est de l'ajouter dans le tableau de l'import
   declarations: [
     AppComponent,
     FaceSnapComponent,

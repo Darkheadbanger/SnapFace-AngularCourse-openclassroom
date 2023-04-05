@@ -27,5 +27,4 @@ export class FaceSnap {
   snaps!: number;
   imageUrl!: string;
   location? : string;
-
 }

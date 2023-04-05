@@ -5,6 +5,8 @@ import {FaceSnapListComponent} from "./face-snap-list/face-snap-list.component";
 import { LandingPageComponentComponent } from './landing-page-component/landing-page-component.component';
 import {SingleFaceSnapComponentComponent} from "./single-face-snap-component/single-face-snap-component.component";
 
+// App component va servir uniquement aux élements structuraux principaux
+
 const routes: Routes = [{
   path: "faceSnaps/:id", component: SingleFaceSnapComponentComponent,
 },{
@@ -19,7 +21,7 @@ const routes: Routes = [{
     RouterModule.forRoot(routes)
   ],
   exports: [
-    RouterModule,
+    RouterModule, //Exporter le roer module configué, comme ca il suffit pour configuer le routeur
   ]
 })
 export class AppRoutingModule { }
